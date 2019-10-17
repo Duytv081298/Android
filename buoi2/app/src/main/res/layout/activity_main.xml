@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#444444"
+    tools:context=".MainActivity">
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="LOGIN"
+                android:textColor="#FFFFFF"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="50sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="410dp"
+                android:layout_height="410dp"
+                android:layout_gravity="center"
+                android:scaleType="centerInside"
+                android:src="@drawable/icon"
+
+                />
+
+            <EditText
+                android:textColor="#FF0000"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:lines="1"
+                android:inputType="textImeMultiLine"
+                android:hint="UserName"
+                android:textColorHint="#FFFFFF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@android:drawable/sym_action_email"
+                android:drawableTint="#FFFFFF"
+                android:layout_margin="10dp"
+                android:paddingBottom="20dp"/>
+            <EditText
+                android:textColor="#FF0000"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:lines="1"
+                android:inputType="textImeMultiLine"
+                android:hint="Password"
+                android:textColorHint="#FFFFFF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@android:drawable/ic_lock_lock"
+                android:drawableTint="#FFFFFF"
+                android:layout_margin="10dp"
+                android:paddingBottom="20dp"/>
+            <ProgressBar
+                style="?android:attr/progressBarStyleHorizontal"
+                android:max="100"
+                android:progress="50"
+                android:progressTint="#FFFFFF"
+                android:secondaryProgress="70"
+                android:indeterminate="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <SeekBar
+                android:layout_marginTop="10dp"
+                android:max="100"
+                android:progress="20"
+                android:secondaryProgress="50"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2">
+                <Button
+                    android:layout_marginTop="50dp"
+                    android:text="LOGIN"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+                <Button
+                    android:layout_marginTop="50dp"
+                    android:text="REGISTER"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+    </HorizontalScrollView>
+
+
+
+
+
+</LinearLayout>

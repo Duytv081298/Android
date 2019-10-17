@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#111111">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="#3366FF">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Android hay làm ruộng?
+                    văn phòng hay ngoài ruộng?"
+            android:textSize="25sp"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textStyle="bold">
+        </TextView>
+    </LinearLayout>
+
+</LinearLayout>
