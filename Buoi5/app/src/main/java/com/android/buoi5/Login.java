@@ -104,6 +104,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             if (resultCode == RESULT_OK){
                 String userName = data.getStringExtra(Register.EXTRA_USER_NAME);
                 String password = data.getStringExtra(Register.EXTRA_PASSWORD);
+                System.out.println("name : sssssssss" );
                 edt_user_name.setText(userName);
                 edt_password.setText(password);
             }else {

@@ -25,6 +25,7 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentH
 
     public void setData(ArrayList<Student> data) {
         this.data = data;
+        notifyDataSetChanged();
     }
 
     public void setListener(StudentItemListener listener) {

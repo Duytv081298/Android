@@ -1,12 +1,15 @@
 package com.android.btvn_buoi7;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.android.btvn_buoi7.adapter.StudentAdapter;
 import com.android.btvn_buoi7.models.Student;
@@ -14,13 +17,19 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements StudentAdapter.StudentItemListener {
+import static com.android.btvn_buoi7.add.EXTRA_NAME;
+import static com.android.btvn_buoi7.add.EXTRA_POINT;
+import static com.android.btvn_buoi7.add.EXTRA_SUBJECT;
 
+public class MainActivity extends AppCompatActivity implements StudentAdapter.StudentItemListener, View.OnClickListener {
+
+    private static final int REQUEST_ADD = 1;
+    private static final int REQUEST_MODIFY = 2;
     private RecyclerView lvStudent;
-    public static   ArrayList<Student> DATA;
+    private ArrayList<Student> data;
     private StudentAdapter adapter;
-    private  FloatingActionButton buttonAdd;
-
+    private FloatingActionButton buttonAdd;
+    private int position;
 
 
     @Override
@@ -31,47 +40,38 @@ public class MainActivity extends AppCompatActivity implements StudentAdapter.St
         initData();
     }
 
-
-
     private void initViews() {
         lvStudent = findViewById(R.id.lv_student);
         adapter = new StudentAdapter(getLayoutInflater());
         lvStudent.setAdapter(adapter);
         adapter.setListener(this);
-        buttonAdd = findViewById(R.id.im_addButton);
+        clickBtnAdd();
 
-        buttonAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
     }
+
     private void initData() {
-        DATA = new ArrayList<>();
-        DATA.add(new Student(R.drawable.circle,"B","Biology","Android","2"));
-        DATA.add(new Student(R.drawable.circle,"E","English","java","1.2"));
-        DATA.add(new Student(R.drawable.circle,"G","Geography","Php","3.7"));
-        DATA.add(new Student(R.drawable.circle,"H","History","Asp","2.4"));
-        DATA.add(new Student(R.drawable.circle,"C","Chemistry","Jsp","1.8"));
-        DATA.add(new Student(R.drawable.circle,"I","Informatics","Ios","1.2"));
-        DATA.add(new Student(R.drawable.circle,"B","Biology","Android","2"));
-        DATA.add(new Student(R.drawable.circle,"E","English","java","1.2"));
-        DATA.add(new Student(R.drawable.circle,"G","Geography","Php","3.7"));
-        DATA.add(new Student(R.drawable.circle,"H","History","Asp","2.4"));
-        DATA.add(new Student(R.drawable.circle,"C","Chemistry","Jsp","1.8"));
-        DATA.add(new Student(R.drawable.circle,"I","Informatics","Ios","1.2"));
-        DATA.add(new Student(R.drawable.circle,"B","Biology","Android","2"));
-        DATA.add(new Student(R.drawable.circle,"E","English","java","1.2"));
-        DATA.add(new Student(R.drawable.circle,"G","Geography","Php","3.7"));
-        DATA.add(new Student(R.drawable.circle,"H","History","Asp","2.4"));
-        DATA.add(new Student(R.drawable.circle,"C","Chemistry","Jsp","1.8"));
-        DATA.add(new Student(R.drawable.circle,"I","Informatics","Ios","1.2"));
-        adapter.setData(DATA);
+        data = new ArrayList<>();
+        data.add(new Student(R.drawable.circle, "B", "Biology", "Android", "2"));
+        data.add(new Student(R.drawable.circle, "E", "English", "java", "1.2"));
+        data.add(new Student(R.drawable.circle, "G", "Geography", "Php", "3.7"));
+        data.add(new Student(R.drawable.circle, "H", "History", "Asp", "2.4"));
+        data.add(new Student(R.drawable.circle, "C", "Chemistry", "Jsp", "1.8"));
+        data.add(new Student(R.drawable.circle, "I", "Informatics", "Ios", "1.2"));
+        adapter.setData(data);
     }
 
     @Override
     public void onFaceItemClick(int position) {
+        String name = data.get(position).getTv_name();
+        String subjects = data.get(position).getTv_subjects();
+        String point = data.get(position).getTv_point();
+        this.position = position;
+
+        Intent intent = new Intent(this, modify.class);
+        intent.putExtra(EXTRA_NAME, name);
+        intent.putExtra(EXTRA_SUBJECT, subjects);
+        intent.putExtra(EXTRA_POINT, point);
+        startActivityForResult(intent, REQUEST_MODIFY);
 
     }
 
@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements StudentAdapter.St
     public void onFaceItemLongClick(final int position) {
         AlertDialog dialog = new AlertDialog.Builder(this)
                 .setTitle("Dalete")
-                .setMessage("Do you want to dalete: " +DATA .get(position).getTv_name())
+                .setMessage("Do you want to dalete: " + data.get(position).getTv_name())
                 .setNegativeButton("Cencel", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -89,9 +89,9 @@ public class MainActivity extends AppCompatActivity implements StudentAdapter.St
                 .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        DATA.remove(position);
+                        data.remove(position);
                         adapter.notifyItemRemoved(position);
-                        adapter.notifyItemRangeChanged(position,DATA.size());
+                        adapter.notifyItemRangeChanged(position, data.size());
                         dialog.dismiss();
                     }
                 })
@@ -99,5 +99,61 @@ public class MainActivity extends AppCompatActivity implements StudentAdapter.St
         dialog.show();
     }
 
+    public void clickBtnAdd() {
+        buttonAdd = findViewById(R.id.im_addButton);
 
+        buttonAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "Test btn", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, add.class);
+                startActivityForResult(intent, REQUEST_ADD);
+            }
+        });
+    }
+
+
+    @Override
+    public void onClick(View v) {
+        Toast.makeText(MainActivity.this, "Test btn", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, add.class);
+        startActivityForResult(intent, REQUEST_ADD);
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_ADD) {
+            if (resultCode == RESULT_OK) {
+                String name = data.getStringExtra(EXTRA_NAME);
+                String subjects = data.getStringExtra(EXTRA_SUBJECT);
+                String point = data.getStringExtra(EXTRA_POINT);
+                String fName = name.charAt(0) +"";
+                fName = fName.toUpperCase();
+
+                this.data.add(new Student(R.drawable.circle, fName, name, subjects, point));
+                adapter.setData(this.data);
+
+            } else {
+                Toast.makeText(this,
+                        "Register cancelled", Toast.LENGTH_LONG).show();
+            }
+        }else if (requestCode == REQUEST_MODIFY) {
+            if (resultCode == RESULT_FIRST_USER) {
+                String name = data.getStringExtra(EXTRA_NAME);
+                String subjects = data.getStringExtra(EXTRA_SUBJECT);
+                String point = data.getStringExtra(EXTRA_POINT);
+                String fName = name.charAt(0) +"";
+                fName = fName.toUpperCase();
+
+                this.data.set(this.position, new Student(R.drawable.circle, fName, name, subjects, point));
+                adapter.setData(this.data);
+
+            } else {
+                Toast.makeText(this,
+                        "Register cancelled", Toast.LENGTH_LONG).show();
+            }
+        }
+    }
 }
