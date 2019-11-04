@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Test</string>
+    <string name="player">Player Name:</string>
+    <string name="user">user</string>
+    <string name="nameGame">GAME MAGIC BOX</string>
+    <string name="times">TIMES: </string>
+    <string name="time">time</string>
+    <string name="point">Point</string>
+</resources>

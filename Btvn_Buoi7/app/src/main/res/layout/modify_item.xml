@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="15dp"
+        android:text="Sửa Sinh Viên"
+        android:textColor="#000"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edt_name"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_margin="30dp"
+        android:background="@layout/rounded_border_edittext"
+        android:hint="@string/tv_name"
+        android:padding="15dp"
+        android:textColorHint="#000000"></EditText>
+
+    <EditText
+        android:id="@+id/edt_subjects"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_margin="30dp"
+        android:background="@layout/rounded_border_edittext"
+        android:hint="@string/tv_subjects"
+        android:padding="15dp"
+        android:textColorHint="#000000"></EditText>
+
+    <EditText
+        android:id="@+id/edt_point"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_margin="30dp"
+        android:background="@layout/rounded_border_edittext"
+        android:hint="@string/tv_point"
+        android:padding="15dp"
+        android:textColorHint="#000000"></EditText>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:weightSum="2">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="#9BDF65"
+            android:text="Cập Nhật"></Button>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="#9BDF65"
+            android:text="Hủy"></Button>
+    </LinearLayout>
+</LinearLayout>
