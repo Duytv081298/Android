@@ -13,7 +13,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import static com.android.btvn_buoi7.add.EXTRA_NAME;
 import static com.android.btvn_buoi7.add.EXTRA_POINT;
 import static com.android.btvn_buoi7.add.EXTRA_SUBJECT;
-import static com.android.btvn_buoi7.add.REQUEST_MAIN;
 
 public class modify extends AppCompatActivity implements View.OnClickListener {
 
@@ -69,7 +68,7 @@ public class modify extends AppCompatActivity implements View.OnClickListener {
                 intent.putExtra(add.EXTRA_NAME, name);
                 intent.putExtra(add.EXTRA_SUBJECT, subjects);
                 intent.putExtra(add.EXTRA_POINT, point);
-                setResult(RESULT_FIRST_USER, intent);
+                setResult(2, intent);
                 finish();
                 break;
             case R.id.btn_cancel:

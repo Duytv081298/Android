@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000033">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="#330066">
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/back"/>
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="#330066">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/anime1"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                />
+            <TextView
+                android:id="@+id/ten"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ten"
+                android:textSize="23sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:layout_marginBottom="20dp"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp">
+                <TextView
+                    android:id="@+id/tg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tác Giả: "
+                    android:textSize="15dp"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginBottom="5dp"/>
+                <TextView
+                    android:layout_toRightOf="@+id/tg"
+                    android:id="@+id/tacgia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tacgia"
+                    android:textSize="15dp"
+                    android:textColor="#FFFFFF"/>
+                <TextView
+                    android:layout_below="@+id/tg"
+                    android:id="@+id/tl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thể Loại: "
+                    android:textSize="15dp"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginBottom="5dp"/>
+                <TextView
+                    android:layout_below="@+id/tg"
+                    android:layout_toRightOf="@+id/tl"
+                    android:id="@+id/theloai"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/theloai"
+                    android:textSize="15dp"
+                    android:textColor="#FFFFFF"/>
+                <TextView
+                    android:layout_below="@+id/tl"
+                    android:id="@+id/tt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Trạng Thái: Đang cập nhật "
+                    android:textSize="15dp"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginBottom="5dp"/>
+                <TextView
+                    android:layout_below="@+id/tt"
+                    android:id="@+id/sc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Số Chương: "
+                    android:textSize="15dp"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginBottom="5dp"/>
+                <TextView
+                    android:layout_below="@+id/tt"
+                    android:layout_toRightOf="@+id/sc"
+                    android:id="@+id/chuong"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Chương 599"
+                    android:textSize="15dp"
+                    android:textColor="#FFFFFF"/>
+                <TextView
+                    android:layout_below="@+id/sc"
+                    android:id="@+id/nu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ngày up: "
+                    android:textSize="15dp"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginBottom="5dp"/>
+                <TextView
+                    android:layout_below="@+id/sc"
+                    android:layout_toRightOf="@+id/nu"
+                    android:id="@+id/ngayup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2015-07-12 07:24:34"
+                    android:textSize="15dp"
+                    android:textColor="#FFFFFF"/>
+                <TextView
+                    android:layout_below="@+id/nu"
+                    android:id="@+id/nc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ngày up: "
+                    android:textSize="15dp"
+                    android:textColor="#FFFFFF"/>
+                <TextView
+                    android:layout_below="@+id/nu"
+                    android:layout_toRightOf="@+id/nc"
+                    android:id="@+id/ncn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2017-06-03 21:52:52"
+                    android:textSize="15dp"
+                    android:textColor="#FFFFFF"/>
+
+            </RelativeLayout>
+        </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/noidung"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#330066"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:text="Ba Thục còn có mỹ danh Thiên Phủ Chi Quốc, trong đó nổi danh nhất chính là Đường Môn
+
+Đường Môn là một thần bí địa phương, rất nhiều người chỉ biết đó là một địa điểm giữa sườn núi, mà đỉnh núi nơi Đường Môn tọa lạc lại có một cái tên làm kẻ khác đảm chiến kinh tâm - Quỷ Kiến Sầu.
+
+Từ đỉnh Quỷ Kiến Sầu mà ném ra một hòn đá, phải đến 19 mới nghe được tiếng vang của hòn đá va chạm dưới chân núi, có thể thấy được núi cao thế nào, cũng bởi vì mười chín giây này, vượt qua mười tám tầng địa ngục một bậc, nên mới có cái tên này.
+
+Một gã hôi y (áo xám) thanh niên đang đứng trên đỉnh núi Quỷ Kiến Sầu, gió núi mãnh liệt không làm thân thể hắn di động chút nào, từ trên ngực hắn ngực có một chữ Đường lớn có thể nhận ra, hắn đến từ Đường Môn, áo xám đại biểu là Đường Môn ngoại môn đệ tử.
+
+Hắn năm nay hai mươi chín tuổi, xuất sanh không lâu thì tiến vào Đường Môn, trong ngoại môn bài danh đệ tam, bởi vậy ngoại môn đệ tử xưng hắn một tiếng Tam Thiếu. Đương nhiên, tới miệng nội môn đệ tử miệng, tựu biến thành Đường Tam.
+
+Đường Môn từ khi thành lập thì bắt đầu chia làm nội ngoại nhị môn, ngoại môn đệ tử đều là ngoại tính (họ khác) hoặc được thụ dư (ban cho) Đường tính (họ Đường), mà nội môn là Đường Môn trực hệ gia tộc truyền thừa.
+
+Lúc này, vẻ mặt Đường Tam rất phong phú, khi thì cười, khi thì khóc, nhưng vô luận thế nào, đều không thể che dấu hưng phấn phát ra từ nội tâm.
+
+Hai mươi chín năm, hai mươi chín năm trước hắn được ngoại môn trưởng lão Đường Lam thái gia nhặt về Đường Môn từ lúc còn nằm trong tã, Đường Môn chính là nhà hắn, mà Đường Môn ám khí chính là tất cả của hắn.
+"
+                android:textSize="17dp"
+                android:textColor="#FFFFFF"
+                android:layout_marginBottom="20dp" />
+
+
+    </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

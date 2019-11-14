@@ -1,23 +1,24 @@
 package com.android.btvn_buoi7.adapter;
-
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.android.btvn_buoi7.R;
 import com.android.btvn_buoi7.models.Student;
-
 import java.util.ArrayList;
+import java.util.Random;
 
 public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentHolder>{
     private ArrayList<Student> data;
     private LayoutInflater inflater;
     private StudentItemListener listener;
+    private Context context;
 
     public StudentAdapter(LayoutInflater inflater) {
         this.inflater = inflater;
@@ -47,14 +48,14 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentH
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    listener.onFaceItemClick(position);
+                    listener.onStudentItemClick(position);
                 }
             });
 
             holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View v) {
-                    listener.onFaceItemLongClick(position);
+                    listener.onStudentItemLongClick(position);
                     return true;
                 }
             });
@@ -81,21 +82,26 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentH
             tv_subjects = itemView.findViewById(R.id.tv_sub);
             tv_point = itemView.findViewById(R.id.tv_point);
         }
-        public void bindData(Student item) {    // Đổ dữ liệu lên view
+        @SuppressLint("ResourceType")
+        public void bindData(Student item) {
             icon.setImageResource(item.getIcon());
             tv_name.setText(item.getTv_name());
             tv_fname.setText(item.getTv_fname());
             tv_subjects.setText(item.getTv_subjects());
             tv_point.setText(item.getTv_point());
+
+            icon.setColorFilter( getRandomColor());
         }
-
     }
-    public interface StudentItemListener {
-        //trong interface mặc định public đối với phương thức
-        //public static final đối với thuộc tính
-        void onFaceItemClick(int position);
 
-        void onFaceItemLongClick(int position);
+    public int getRandomColor(){
+        Random rnd = new Random();
+        return Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
+    }
+
+    public interface StudentItemListener {
+        void onStudentItemClick(int position);
+        void onStudentItemLongClick(int position);
     }
 
 }

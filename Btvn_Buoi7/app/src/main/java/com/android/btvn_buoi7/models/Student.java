@@ -7,10 +7,11 @@ public class Student {
     private String tv_subjects;
     private String tv_point;
 
-    public Student(int icon, String tv_fname, String tv_name,  String tv_subjects, String tv_point) {
+    public Student(int icon, String tv_name,  String tv_subjects, String tv_point) {
         this.icon = icon;
         this.tv_name = tv_name;
-        this.tv_fname = tv_fname;
+        String tv_fname = tv_name.charAt(0) +"";
+        this.tv_fname = tv_fname.toUpperCase();
         this.tv_subjects = tv_subjects;
         this.tv_point = tv_point;
     }

@@ -21,7 +21,7 @@ import static com.android.btvn_buoi7.add.EXTRA_NAME;
 import static com.android.btvn_buoi7.add.EXTRA_POINT;
 import static com.android.btvn_buoi7.add.EXTRA_SUBJECT;
 
-public class MainActivity extends AppCompatActivity implements StudentAdapter.StudentItemListener, View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements StudentAdapter.StudentItemListener {
 
     private static final int REQUEST_ADD = 1;
     private static final int REQUEST_MODIFY = 2;
@@ -51,17 +51,29 @@ public class MainActivity extends AppCompatActivity implements StudentAdapter.St
 
     private void initData() {
         data = new ArrayList<>();
-        data.add(new Student(R.drawable.circle, "B", "Biology", "Android", "2"));
-        data.add(new Student(R.drawable.circle, "E", "English", "java", "1.2"));
-        data.add(new Student(R.drawable.circle, "G", "Geography", "Php", "3.7"));
-        data.add(new Student(R.drawable.circle, "H", "History", "Asp", "2.4"));
-        data.add(new Student(R.drawable.circle, "C", "Chemistry", "Jsp", "1.8"));
-        data.add(new Student(R.drawable.circle, "I", "Informatics", "Ios", "1.2"));
+        data.add(new Student(R.drawable.circle,  "Biology", "Android", "2"));
+        data.add(new Student(R.drawable.circle, "English", "java", "1.2"));
+        data.add(new Student(R.drawable.circle,  "Geography", "Php", "3.7"));
+        data.add(new Student(R.drawable.circle,  "History", "Asp", "2.4"));
+        data.add(new Student(R.drawable.circle,  "Chemistry", "Jsp", "1.8"));
+        data.add(new Student(R.drawable.circle, "Informatics", "Ios", "1.2"));
+        data.add(new Student(R.drawable.circle,  "Biology", "Android", "2"));
+        data.add(new Student(R.drawable.circle, "English", "java", "1.2"));
+        data.add(new Student(R.drawable.circle,  "Geography", "Php", "3.7"));
+        data.add(new Student(R.drawable.circle,  "History", "Asp", "2.4"));
+        data.add(new Student(R.drawable.circle,  "Chemistry", "Jsp", "1.8"));
+        data.add(new Student(R.drawable.circle, "Informatics", "Ios", "1.2"));
+        data.add(new Student(R.drawable.circle,  "Biology", "Android", "2"));
+        data.add(new Student(R.drawable.circle, "English", "java", "1.2"));
+        data.add(new Student(R.drawable.circle,  "Geography", "Php", "3.7"));
+        data.add(new Student(R.drawable.circle,  "History", "Asp", "2.4"));
+        data.add(new Student(R.drawable.circle,  "Chemistry", "Jsp", "1.8"));
+        data.add(new Student(R.drawable.circle, "Informatics", "Ios", "1.2"));
         adapter.setData(data);
     }
 
     @Override
-    public void onFaceItemClick(int position) {
+    public void onStudentItemClick(int position) {
         String name = data.get(position).getTv_name();
         String subjects = data.get(position).getTv_subjects();
         String point = data.get(position).getTv_point();
@@ -76,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements StudentAdapter.St
     }
 
     @Override
-    public void onFaceItemLongClick(final int position) {
+    public void onStudentItemLongClick(final int position) {
         AlertDialog dialog = new AlertDialog.Builder(this)
                 .setTitle("Dalete")
                 .setMessage("Do you want to dalete: " + data.get(position).getTv_name())
@@ -105,20 +117,10 @@ public class MainActivity extends AppCompatActivity implements StudentAdapter.St
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Test btn", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(MainActivity.this, add.class);
                 startActivityForResult(intent, REQUEST_ADD);
             }
         });
-    }
-
-
-    @Override
-    public void onClick(View v) {
-        Toast.makeText(MainActivity.this, "Test btn", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(this, add.class);
-        startActivityForResult(intent, REQUEST_ADD);
-
     }
 
     @Override
@@ -129,10 +131,8 @@ public class MainActivity extends AppCompatActivity implements StudentAdapter.St
                 String name = data.getStringExtra(EXTRA_NAME);
                 String subjects = data.getStringExtra(EXTRA_SUBJECT);
                 String point = data.getStringExtra(EXTRA_POINT);
-                String fName = name.charAt(0) +"";
-                fName = fName.toUpperCase();
 
-                this.data.add(new Student(R.drawable.circle, fName, name, subjects, point));
+                this.data.add(new Student(R.drawable.circle,  name, subjects, point));
                 adapter.setData(this.data);
 
             } else {
@@ -140,14 +140,12 @@ public class MainActivity extends AppCompatActivity implements StudentAdapter.St
                         "Register cancelled", Toast.LENGTH_LONG).show();
             }
         }else if (requestCode == REQUEST_MODIFY) {
-            if (resultCode == RESULT_FIRST_USER) {
+            if (resultCode == 2) {
                 String name = data.getStringExtra(EXTRA_NAME);
                 String subjects = data.getStringExtra(EXTRA_SUBJECT);
                 String point = data.getStringExtra(EXTRA_POINT);
-                String fName = name.charAt(0) +"";
-                fName = fName.toUpperCase();
 
-                this.data.set(this.position, new Student(R.drawable.circle, fName, name, subjects, point));
+                this.data.set(this.position, new Student(R.drawable.circle, name, subjects, point));
                 adapter.setData(this.data);
 
             } else {

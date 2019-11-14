@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#03A9F4"
+        android:drawableLeft="@drawable/ic_call_black_24dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:text="         Dialer"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tv_phone_number"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:textColor="#03A9F4"
+        android:textSize="35sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        android:background="#03A9F4"
+        android:orientation="vertical"
+        android:paddingTop="48dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_number_1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#03A9F4"
+                android:onClick="dialerOnClick"
+                android:text="1"
+                android:textColor="#FFFFFF"
+                android:textSize="35sp" />
+
+            <Button
+                android:id="@+id/btn_number_2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#03A9F4"
+                android:onClick="dialerOnClick"
+                android:text="2"
+                android:textColor="#FFFFFF"
+                android:textSize="35sp" />
+
+            <Button
+                android:id="@+id/btn_number_3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#03A9F4"
+                android:onClick="dialerOnClick"
+                android:text="3"
+                android:textColor="#FFFFFF"
+                android:textSize="35sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_number_4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#03A9F4"
+                android:onClick="dialerOnClick"
+                android:text="4"
+                android:textColor="#FFFFFF"
+                android:textSize="35sp" />
+
+            <Button
+                android:id="@+id/btn_number_5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#03A9F4"
+                android:onClick="dialerOnClick"
+                android:text="5"
+                android:textColor="#FFFFFF"
+                android:textSize="35sp" />
+
+            <Button
+                android:id="@+id/btn_number_6"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#03A9F4"
+                android:onClick="dialerOnClick"
+                android:text="6"
+                android:textColor="#FFFFFF"
+                android:textSize="35sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_number_7"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#03A9F4"
+                android:onClick="dialerOnClick"
+                android:text="7"
+                android:textColor="#FFFFFF"
+                android:textSize="35sp" />
+
+            <Button
+                android:id="@+id/btn_number_8"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#03A9F4"
+                android:onClick="dialerOnClick"
+                android:text="8"
+                android:textColor="#FFFFFF"
+                android:textSize="35sp" />
+
+            <Button
+                android:id="@+id/btn_number_9"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#03A9F4"
+                android:onClick="dialerOnClick"
+                android:text="9"
+                android:textColor="#FFFFFF"
+                android:textSize="35sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_number_sao"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#03A9F4"
+                android:onClick="dialerOnClick"
+                android:text="*"
+                android:textColor="#FFFFFF"
+                android:textSize="35sp" />
+
+            <Button
+                android:id="@+id/btn_number_0"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#03A9F4"
+                android:onClick="dialerOnClick"
+                android:text="0"
+                android:textColor="#FFFFFF"
+                android:textSize="35sp" />
+
+            <Button
+                android:id="@+id/btn_number_thang"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#03A9F4"
+                android:onClick="dialerOnClick"
+                android:text="#"
+                android:textColor="#FFFFFF"
+                android:textSize="35sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_number_dialer"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#03A9F4"
+                android:drawableTop="@drawable/ic_call_black_48dp"
+                android:onClick="dialerOnClick"
+                android:paddingTop="20dp" />
+
+            <Button
+                android:id="@+id/btn_number_delete"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#03A9F4"
+                android:drawableTop="@drawable/ic_keyboard_backspace_black_48dp"
+                android:onClick="dialerOnClick"
+                android:paddingTop="20dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
