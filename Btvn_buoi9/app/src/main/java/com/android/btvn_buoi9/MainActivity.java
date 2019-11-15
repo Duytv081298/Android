@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.widget.ImageView;
 
 import com.android.btvn_buoi9.fragment.DialerActivity;
@@ -42,15 +43,19 @@ public class MainActivity extends AppCompatActivity {
         transaction.commit();
     }
 
-    public HomeActivity getFmHome() {
-        return fmHome;
-    }
-
     public DialerActivity getFmDialer() {
         return fmDialer;
     }
 
     public ImageActivity getFmImage() {
         return fmImage;
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if ((keyCode == KeyEvent.KEYCODE_BACK)) {
+            showFragment(this.fmHome);
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }

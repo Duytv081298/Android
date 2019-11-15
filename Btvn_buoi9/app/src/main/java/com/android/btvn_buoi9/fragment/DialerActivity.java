@@ -17,20 +17,15 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.android.btvn_buoi9.R;
 
 public class DialerActivity  extends Fragment implements View.OnClickListener {
-
     private String phoneNumber;
-
     private Button btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btnSao, btnThang, btnDialer, btnDelete;
     private TextView tvPhoneNumber;
-
     private final String TAG = "DialerActivity";
-
 
     @Nullable
     @Override
@@ -44,20 +39,23 @@ public class DialerActivity  extends Fragment implements View.OnClickListener {
         super.onActivityCreated(savedInstanceState);
         Log.e(TAG, "onActivityCreated");
         tvPhoneNumber = getActivity().findViewById(R.id.tv_phone_number);
-        btn0 = getActivity().findViewById(R.id.btn_number_0);
-        btn1 = getActivity().findViewById(R.id.btn_number_1);
-        btn2 = getActivity().findViewById(R.id.btn_number_2);
-        btn3 = getActivity().findViewById(R.id.btn_number_3);
-        btn4 = getActivity().findViewById(R.id.btn_number_4);
-        btn5 = getActivity().findViewById(R.id.btn_number_5);
-        btn6 = getActivity().findViewById(R.id.btn_number_6);
-        btn7 = getActivity().findViewById(R.id.btn_number_7);
-        btn8 = getActivity().findViewById(R.id.btn_number_8);
-        btn9 = getActivity().findViewById(R.id.btn_number_9);
-        btnSao = getActivity().findViewById(R.id.btn_number_sao);
-        btnThang = getActivity().findViewById(R.id.btn_number_thang);
-        btnDialer = getActivity().findViewById(R.id.btn_number_dialer);
-        btnDelete = getActivity().findViewById(R.id.btn_number_delete);
+
+
+
+        btn0 = getActivity().findViewById(R.id.btn_0);
+        btn1 = getActivity().findViewById(R.id.btn_1);
+        btn2 = getActivity().findViewById(R.id.btn_2);
+        btn3 = getActivity().findViewById(R.id.btn_3);
+        btn4 = getActivity().findViewById(R.id.btn_4);
+        btn5 = getActivity().findViewById(R.id.btn_5);
+        btn6 = getActivity().findViewById(R.id.btn_6);
+        btn7 = getActivity().findViewById(R.id.btn_7);
+        btn8 = getActivity().findViewById(R.id.btn_8);
+        btn9 = getActivity().findViewById(R.id.btn_9);
+        btnSao = getActivity().findViewById(R.id.btn_sao);
+        btnThang = getActivity().findViewById(R.id.btn_thang);
+        btnDialer = getActivity().findViewById(R.id.btn_dialer);
+        btnDelete = getActivity().findViewById(R.id.btn_delete);
 
         btn0.setOnClickListener(this);
         btn1.setOnClickListener(this);
@@ -75,64 +73,51 @@ public class DialerActivity  extends Fragment implements View.OnClickListener {
         btnDelete.setOnClickListener(this);
         phoneNumber = "";
     }
-
-    private void numberClick(Button button) {
-        phoneNumber += button.getText().toString();
-        tvPhoneNumber.setText(phoneNumber);
-    }
-    private void delete() {
-        if (phoneNumber.length() != 0) {
-            phoneNumber = phoneNumber.substring(0, phoneNumber.length() - 1);
-            tvPhoneNumber.setText(phoneNumber);
-        }
-    }
-
     @Override
     public void onDestroy() {
         super.onDestroy();
         Log.e(TAG, "onDestroy");
     }
-
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.btn_number_0:
-                numberClick(btn0);
+            case R.id.btn_0:
+                click(btn0);
                 break;
-            case R.id.btn_number_1:
-                numberClick(btn1);
+            case R.id.btn_1:
+                click(btn1);
                 break;
-            case R.id.btn_number_2:
-                numberClick(btn2);
+            case R.id.btn_2:
+                click(btn2);
                 break;
-            case R.id.btn_number_3:
-                numberClick(btn3);
+            case R.id.btn_3:
+                click(btn3);
                 break;
-            case R.id.btn_number_4:
-                numberClick(btn4);
+            case R.id.btn_4:
+                click(btn4);
                 break;
-            case R.id.btn_number_5:
-                numberClick(btn5);
+            case R.id.btn_5:
+                click(btn5);
                 break;
-            case R.id.btn_number_6:
-                numberClick(btn6);
+            case R.id.btn_6:
+                click(btn6);
                 break;
-            case R.id.btn_number_7:
-                numberClick(btn7);
+            case R.id.btn_7:
+                click(btn7);
                 break;
-            case R.id.btn_number_8:
-                numberClick(btn8);
+            case R.id.btn_8:
+                click(btn8);
                 break;
-            case R.id.btn_number_9:
-                numberClick(btn9);
+            case R.id.btn_9:
+                click(btn9);
                 break;
-            case R.id.btn_number_sao:
-                numberClick(btnSao);
+            case R.id.btn_sao:
+                click(btnSao);
                 break;
-            case R.id.btn_number_thang:
-                numberClick(btnThang);
+            case R.id.btn_thang:
+                click(btnThang);
                 break;
-            case R.id.btn_number_dialer:
+            case R.id.btn_dialer:
                 Intent intent = new Intent(Intent.ACTION_CALL);
                 intent.setData(Uri.parse("tel:" + phoneNumber));
                 if(ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
@@ -146,9 +131,22 @@ public class DialerActivity  extends Fragment implements View.OnClickListener {
                     }
                 }
                 break;
-            case R.id.btn_number_delete:
+            case R.id.btn_delete:
                 delete();
                 break;
         }
     }
+    private void click(Button button) {
+        phoneNumber += button.getText().toString();
+        tvPhoneNumber.setText(phoneNumber);
+    }
+    private void delete() {
+        if (phoneNumber.length() != 0) {
+            phoneNumber = phoneNumber.substring(0, phoneNumber.length() - 1);
+            tvPhoneNumber.setText(phoneNumber);
+        }
+    }
+
+
+
 }

@@ -74,4 +74,6 @@ public class Detail_Story extends AppCompatActivity implements View.OnClickListe
         }
         return super.onKeyDown(keyCode, event);
     }
+    
+
 }
