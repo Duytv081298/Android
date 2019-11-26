@@ -5,9 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
     android:padding="16dp"
     tools:context=".MainActivity">
+    <include
+        layout="@layout/action_bar_layout"/>
+
+    <androidx.appcompat.widget.SearchView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
 
     <EditText
         android:id="@+id/edt_search"
@@ -24,7 +30,9 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/lv_face"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+
 
 </LinearLayout>
