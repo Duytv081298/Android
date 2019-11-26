@@ -14,11 +14,12 @@ import com.example.app_3k.R;
 import com.example.app_3k.models.News;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewHolder>{
     private ArrayList<News> data;
     private LayoutInflater inflater;
-
+    private NewsItemListener listener;
 
     public NewsAdapter(LayoutInflater inflater) {
         this.inflater = inflater;
@@ -27,6 +28,10 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewHolder>{
     public void setData(ArrayList<News> data) {
         this.data = data;
         notifyDataSetChanged();
+    }
+
+    public void setListener(NewsItemListener listener) {
+        this.listener = listener;
     }
 
     @NonNull
@@ -78,4 +83,31 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewHolder>{
                 .error(R.mipmap.ic_launcher)
                 .into(im);
     }
+
+    @Override
+    public void onBindViewHolder(@NonNull NewHolder holder, final int position, @NonNull List<Object> payloads) {
+        super.onBindViewHolder(holder, position, payloads);
+        holder.bindData(data.get(position));
+        if (listener != null) {
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    listener.onNewsItemClicked(position);
+                }
+            });
+            holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    listener.onNewsItemLongClicked(position);
+                    return true;
+                }
+            });
+        }
+    }
+
+    public interface NewsItemListener{
+        void onNewsItemClicked(int position);
+        void onNewsItemLongClicked(int position);
+    }
+
 }

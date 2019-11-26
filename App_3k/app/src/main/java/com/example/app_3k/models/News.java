@@ -18,6 +18,7 @@ public class News {
     @NonNull            @PrimaryKey()       @SerializedName("url")                      private String url;
     @ColumnInfo()       @SerializedName("urlToImage")               private String urlToImage;
     @ColumnInfo()       @SerializedName("publishedAt")              private String publishedAt;
+    @ColumnInfo()                                                   private boolean isFavorite;
 
     public String getTitle() {
         return title;
@@ -57,5 +58,13 @@ public class News {
 
     public void setPublishedAt(String publishedAt) {
         this.publishedAt = publishedAt;
+    }
+
+    public boolean isFavorite() {
+        return isFavorite;
+    }
+
+    public void setFavorite(boolean favorite) {
+        isFavorite = favorite;
     }
 }

@@ -65,8 +65,6 @@ public class FaceAdapter extends RecyclerView.Adapter<FaceAdapter.FaceHolder> {
                 }
             });
         }
-
-
     }
 
     @Override
