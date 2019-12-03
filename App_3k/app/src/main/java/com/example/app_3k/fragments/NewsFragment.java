@@ -2,15 +2,12 @@ package com.example.app_3k.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.room.Insert;
 
 import com.example.app_3k.R;
 import com.example.app_3k.WebActivity;
-import com.example.app_3k.adapter.NewPagerAdapter;
 import com.example.app_3k.adapter.NewsAdapter;
 import com.example.app_3k.base.BaseFragment;
 import com.example.app_3k.models.News;

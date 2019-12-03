@@ -4,16 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.viewpager.widget.ViewPager;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.Window;
-import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.target.DrawableImageViewTarget;
 import com.example.app_3k.adapter.NewPagerAdapter;
 import com.example.app_3k.api.ApiBuilder;
 import com.example.app_3k.dao.AppDatabase;
@@ -66,13 +61,6 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
                 android.R.style.Theme_DeviceDefault_Light_Dialog_NoActionBar_MinWidth);
         dialog.setContentView(R.layout.dialog_progress);
         dialog.setCancelable(false);
-
-
-
-
-
-
-
         //TODO
 
         List<News> data = AppDatabase.getInstance(this)
@@ -93,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     @Override
     public boolean onQueryTextSubmit(String query) {
         pager.setCurrentItem(0);
-        dialog.show();
+//        dialog.show();
         ApiBuilder.getInstance().searchNews(
                 query,
                 "f70e06a71e524dfa86dbfcf7ca38e62f",
@@ -101,7 +89,6 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         ).enqueue(this);
         return false;
     }
-
     @Override
     public boolean onQueryTextChange(String newText) {
         return false;
@@ -115,7 +102,6 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         News[] news = new News[data.size()];
         data.toArray(news);
         AppDatabase.getInstance(this).getNewsDao().update(news);
-
         dialog.dismiss();
     }
 
