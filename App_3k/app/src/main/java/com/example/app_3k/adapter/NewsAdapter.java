@@ -16,9 +16,10 @@ import com.example.app_3k.models.News;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewHolder>{
+public abstract class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewHolder>{
     private ArrayList<News> data;
     private LayoutInflater inflater;
+
     private NewsItemListener listener;
 
     public NewsAdapter(LayoutInflater inflater) {
@@ -47,8 +48,11 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewHolder>{
     public void onBindViewHolder(@NonNull NewsAdapter.NewHolder holder, int position) {
         News news = data.get(position);
         holder.bindData(news);
+        decodeView(holder, position);
     }
-    
+
+    protected abstract void decodeView(NewHolder newHolder, int position);
+
     @Override
     public int getItemCount() {
         return data == null ? 0 : data.size();

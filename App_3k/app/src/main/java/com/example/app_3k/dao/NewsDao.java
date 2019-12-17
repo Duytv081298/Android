@@ -13,6 +13,11 @@ import java.util.List;
 
 @Dao
 public interface NewsDao     {
+
+    @Query("SELECT *FROM News WHERE isFavorite = :isFavorite")
+    List<News> getFavorite(boolean isFavorite);
+
+
     @Query("SELECT * FROM News")
     List<News> getNews();
 
