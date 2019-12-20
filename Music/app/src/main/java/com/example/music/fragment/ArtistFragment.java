@@ -11,7 +11,8 @@ import androidx.databinding.DataBindingUtil;
 
 import com.example.music.R;
 import com.example.music.adapter.SongAdapter;
-import com.example.music.adapter.SongListener;
+import com.example.music.adapter.artist.ArtistAdapter;
+import com.example.music.adapter.artist.ArtistListener;
 import com.example.music.base.BaseFragment;
 import com.example.music.data.SystemData;
 
@@ -20,10 +21,10 @@ import com.example.music.models.Song;
 
 import java.util.ArrayList;
 
-public class ArtistFragment extends BaseFragment implements SongListener {
+public class ArtistFragment extends BaseFragment implements ArtistListener {
     private SystemData data;
     private ArrayList<Song> arr;
-    private SongAdapter adapter;
+    private ArtistAdapter adapter;
     private FragmentArtistBinding binding;
 
     @Nullable
@@ -31,13 +32,13 @@ public class ArtistFragment extends BaseFragment implements SongListener {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_artist, container, false);
         data = new SystemData(getContext());
-
         arr = data.readData();
 
         arr.size();
-        adapter = new SongAdapter(getLayoutInflater());
+        adapter = new ArtistAdapter(getLayoutInflater());
 
         adapter.setData(arr);
+
         adapter.setListener(this);
         binding.lvSongArtist.setAdapter(adapter);
 
@@ -60,7 +61,7 @@ public class ArtistFragment extends BaseFragment implements SongListener {
     }
 
     @Override
-    public void onItemSongClicked(Song song) {
+    public void onItemArtistClicked(Song song) {
 
     }
 }
