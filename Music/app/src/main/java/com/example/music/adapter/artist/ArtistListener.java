@@ -1,7 +1,7 @@
 package com.example.music.adapter.artist;
 
-import com.example.music.models.Song;
+import com.example.music.models.Artist;
 
 public interface ArtistListener {
-    void onItemArtistClicked(Song song);
+    void onItemArtistClicked(Artist artist);
 }

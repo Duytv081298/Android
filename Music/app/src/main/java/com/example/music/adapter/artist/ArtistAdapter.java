@@ -7,12 +7,12 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.music.databinding.ItemSongArtistBinding;
-import com.example.music.models.Song;
+import com.example.music.models.Artist;
 
 import java.util.ArrayList;
 
 public class ArtistAdapter extends RecyclerView.Adapter<ArtistAdapter.ArtistHolder> {
-    private ArrayList<Song> data;
+    private ArrayList<Artist> data;
     private LayoutInflater inflater;
     private ArtistListener listener;
 
@@ -20,7 +20,7 @@ public class ArtistAdapter extends RecyclerView.Adapter<ArtistAdapter.ArtistHold
         this.inflater = inflater;
     }
 
-    public void setData(ArrayList<Song> data) {
+    public void setData(ArrayList<Artist> data) {
         this.data = data;
         notifyDataSetChanged();
     }
@@ -37,9 +37,12 @@ public class ArtistAdapter extends RecyclerView.Adapter<ArtistAdapter.ArtistHold
         );
         return new ArtistHolder(binding);
     }
-    @Override
+
+
+
+        @Override
     public void onBindViewHolder(@NonNull ArtistHolder holder, int position) {
-        holder.binding.setItem(data.get(position));
+        holder.binding.setItemartist(data.get(position));
 
         if (listener !=null){
             holder.binding.setArtistlistener(listener);

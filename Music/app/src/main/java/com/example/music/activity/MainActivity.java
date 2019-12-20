@@ -25,9 +25,6 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     private ArtistFragment fmArtist = new ArtistFragment();
     private MusicFragment fmMusic = new MusicFragment();
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,8 +42,6 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         pager.setAdapter(adapter);
         tab.setupWithViewPager(pager);
     }
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.search,menu);

@@ -30,12 +30,9 @@ public class MusicFragment extends BaseFragment implements SongListener {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_music, container, false);
         data = new SystemData(getContext());
-
         arr = data.readData();
-
         arr.size();
         adapter = new SongAdapter(getLayoutInflater());
-
         adapter.setData(arr);
         adapter.setListener(this);
         binding.lvSong.setAdapter(adapter);
