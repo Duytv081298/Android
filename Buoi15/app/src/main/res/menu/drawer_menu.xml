@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_music_left"
+            android:icon="@drawable/menu_music"
+            android:title="Music" />
+        <item
+            android:id="@+id/nav_album_left"
+            android:icon="@drawable/menu_album"
+            android:title="Album" />
+        <item
+            android:id="@+id/nav_artist_left"
+            android:icon="@drawable/menu_artist"
+            android:title="Nghệ Sĩ" />
+    </group>
+    <item android:title="Other">
+        <menu>
+            <item
+                android:id="@+id/nav_game_left"
+                android:icon="@drawable/menu_game"
+                android:title="Mini Game" />
+        </menu>
+    </item>
+
+</menu>
