@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+<data>
+<variable
+    name="time"
+    type="com.example.chucmungnammoi.MainActivity" />
+</data>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textFontWeight="@android:integer/config_longAnimTime"
+        android:textStyle="bold"
+        android:textSize="50sp"
+        android:text="Happy New Year"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="20sp"
+        android:textColor="#FF0000"
+        app:fontFamily="@font/yesteryear"/>
+    <TextView
+        android:id="@+id/Htime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text"
+        android:layout_centerHorizontal="true"
+        android:textFontWeight="@android:integer/config_longAnimTime"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:layout_marginBottom="20sp"
+        app:fontFamily="@font/yesteryear"/>
+    <TextView
+        android:id="@+id/Dtime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Htime"
+        android:layout_centerHorizontal="true"
+        android:textFontWeight="@android:integer/config_longAnimTime"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:layout_marginBottom="20sp"
+        app:fontFamily="@font/yesteryear"/>
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Dtime"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="5dp">
+    <TextView
+        android:id="@+id/HappyNewYear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textFontWeight="@android:integer/config_longAnimTime"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_margin="10dp"
+        />
+    </ScrollView>
+</RelativeLayout>
+</layout>
